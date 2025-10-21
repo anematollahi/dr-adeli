@@ -20,7 +20,24 @@
     .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
 
     .header{display:flex;gap:16px;align-items:center}
-    .avatar{width:86px;height:86px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:28px}
+    .avatar,
+    .doctor-photo{
+      width:86px;
+      height:86px;
+      border-radius:12px;
+      object-fit:cover;
+      flex-shrink:0;
+    }
+    .avatar{
+      background:linear-gradient(135deg,var(--accent),#7c3aed);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:white;
+      font-weight:700;
+      font-size:28px;
+    }
+
     h1{margin:0;font-size:20px}
     .subtitle{color:var(--muted);margin-top:6px;font-size:14px}
 
@@ -42,7 +59,7 @@
     /* responsive */
     @media (max-width:820px){
       .grid{grid-template-columns:1fr;}
-      .avatar{width:72px;height:72px;font-size:22px}
+      .avatar, .doctor-photo{width:72px;height:72px;font-size:22px}
     }
 
     /* subtle utilities */
@@ -54,6 +71,8 @@
   <div class="container">
     <div class="card">
       <div class="header">
+        <img src="1.jpg" alt="دکتر سید حسن عادلی" class="doctor-photo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="avatar" style="display:none;">د</div>
         <div>
           <h1>دکتر سید حسن عادلی</h1>
           <div class="subtitle">بورد فوق‌تخصصی — بیماری‌های ریه</div>
